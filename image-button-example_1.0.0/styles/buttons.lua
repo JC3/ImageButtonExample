@@ -123,3 +123,41 @@ data.raw["gui-style"].default["tiled-image-button-style"] = {
 		}
 	}
 }
+
+-- Also just for grins, while this isn't an illustration of putting an icon on a button,
+-- here is how "composition" type images can be used to generate frames (unfortunately,
+-- checkboxes do not accept this). As a bonus this also shows how to add sounds to 
+-- buttons (this does not work on checkboxes, which is a bummer).
+
+data.raw["gui-style"].default["composition-button-style"] = {
+	type = "button_style",
+	parent = "button_style",
+	default_graphical_set = {
+		type = "composition",
+		filename = "__image-button-example__/graphics/round-button.png",
+		position = { 0, 0 },
+		corner_size = { 8, 8 }
+	},
+	hovered_graphical_set = {
+		type = "composition",
+		filename = "__image-button-example__/graphics/round-button.png",
+		position = { 17, 0 },
+		corner_size = { 8, 8 }
+	},
+	clicked_graphical_set = {
+		type = "composition",
+		filename = "__image-button-example__/graphics/round-button.png",
+		position = { 34, 0 },
+		corner_size = { 8, 8 }
+	},
+	disabled_graphical_set = {
+		type = "composition",
+		filename = "__image-button-example__/graphics/round-button.png",
+		position = { 51, 0 },
+		corner_size = { 8, 8 }
+	},
+	left_click_sound = {{
+		filename = "__core__/sound/gui-click.ogg",
+        volume = 1
+    }}
+}

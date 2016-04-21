@@ -63,6 +63,15 @@ function build_example_gui (frame)
 		state = true
 	})
 	
+	-- And a bonus example of a "composition" type image for a button border.
+	
+	frame.add({
+		type = "button",
+		name = "composition-button",
+		style = "composition-button-style",
+		caption = "> 9000"
+	})
+	
 end
 
 
